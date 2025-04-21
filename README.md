@@ -1,6 +1,6 @@
 # Muestreo-y-series-de-tiempo
 
 
-##Carpeta con data
+- Carpeta con data
 
-##Carpeta con scripts
+- Carpeta con scripts
