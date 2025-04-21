@@ -23,16 +23,34 @@ end(oil)
 frequency(oil)
 
 
-mod_ses=ses(oil, h=20, level=c(0.95,0.90), alpha = 0.1)
+mod_ses=ses(oil, h=20, level=c(0.6))
+summary(mod_ses)
 
-mod_ses1=ses(oil, h=20, level=c(0.95,0.90), alpha = 0.7)
 
-plot(mod_ses)
-lines(mod_ses$fitted, col="red", lty=2)
+mod = ses(oil, h=20, level=c(0.6))
+summary(mod)
 
-plot(mod_ses1)
+
+
+
+# Demanda en 2014 sera de 500 millones, ¿P de que no pueda ser atendida?
+
+mod_ses0=ses(oil, h=20, level=c(0.95,0.90), alpha = 0.1) #Modelo 1
+summary(mod_ses0)
+
+plot(mod_ses0) #Grafica 1
+lines(mod_ses0$fitted, col="red", lty=2)
+
+
+mod_ses1=ses(oil, h=20, level=c(0.95,0.90), alpha = 0.8) #Modelo 2
+summary(mod_ses0)
+
+
+plot(mod_ses1) #Grafica 2
 lines(mod_ses1$fitted, col="blue", lty=2)
 
+
+# Demanda en 2014 sera de 500 millones, ¿P de que no pueda ser atendida?
 
 prediccion <- forecast(mod_ses, h = 1)  # h=1 para predecir el siguiente valor
 prediccion
